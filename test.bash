@@ -16,3 +16,6 @@ out=$(seq 5 | ./plus)
 [ "$res" = 0 ] && echo OK
 exit $res
 
+### I/O ###
+out=$(seq 5 | ./plus)
+[ "${out}" = 15 ] || ng ${LINENO}
