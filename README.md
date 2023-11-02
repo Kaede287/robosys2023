@@ -1,6 +1,23 @@
 # robosys2023
-*　使い方
-*　インストール方法
+
+# plusコマンド
+[![test](https://github.com/Kaede287/robosys2023/actions/workflows/test.yml/badge.svg)](https://github.com/Kaede287/robosys2023/actions/workflows/test.yml)
+
+標準出力から読み込んだ数字を足す。
+
+## 必要なソフトウェア
+* python
+  *テスト済み:3.7~3.10
+
+## 使い方
+* 標準入力の数を足す
+
+## インストール方法
+* 自身の動くpython環境にインストールする
+
+## テスト環境 
+* Ubuntu
+
 
 ```
 seq 10 | ./plus_stdin
