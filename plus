@@ -6,11 +6,10 @@ import sys
 
 ans = 0
 
-for line in sys.stdin:
+for line in sys.argv[1:]:
     try:
-        ans += float(line)
-
-    except: Errormessage 
+        ans += int(line)
+    except: #Errormessage 
         print(f"error! 数値を入力して下さい:{line}")
 
 
