@@ -8,7 +8,7 @@ ng () {
 
 res=0
 
-### I/O TEST ###
+### 数字テスト###
 out=$(seq 1000 2000 30000 | ./plus)
 [ "${out}" = "33,000" ] || ng ${LINENO}
 
@@ -18,14 +18,20 @@ out=$(seq 1000 2000 3000 | ./plus)
 out=$(seq 10000 10000 10000 | ./plus)
 [ "${out}" = "30,000" ] || ng ${LINENO}
 
-out=$(seq 0.5 | ./plus)
-
-### Error Input Test ###
+### 文字を含むとき ###
 out=$(seq あ | ./plus)
 [ "$?" = 1 ] 					|| ng ${LINENO}
 [ "${out}" = "error! 数値を入力して下さい:あ" ] || ng ${LINENO}
 
 out=$(seq 1000 あ 30000 | ./plus)
+[ "$?" = 1 ]                                    || ng ${LINENO}
+[ "${out}" = "error! 数値を入力して下さい:あ" ] || ng ${LINENO}
+
+out=$(seq 1000 a 30000 | ./plus)
+[ "$?" = 1 ]                                    || ng ${LINENO}
+[ "${out}" = "error! 数値を入力して下さい:あ" ] || ng ${LINENO}
+
+$(seq 1000 A 30000 | ./plus)
 [ "$?" = 1 ]                                    || ng ${LINENO}
 [ "${out}" = "error! 数値を入力して下さい:あ" ] || ng ${LINENO}
 
