@@ -3,31 +3,28 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 ng () {
-	echo NG at Line $1
-	res=1
+    echo "NG at Line $1"
 }
 
 res=0
 
 ### I/O TEST ###
-out=$(seq 5 | ./plus)
-[ "${out}" = 15 ] || ng ${LINENO}
+out=$(seq 1000 2000 30000 | ./plus)
+[ "${out}" = "33,000" ] || ng ${LINENO}
+
+### Error Input Test ###
+out=$(seq あ | ./plus)
+[ "$?" = 1 ] 					|| ng ${LINENO}
+[ "${out}" = "error! 数値を入力して下さい:あ" ] || ng ${LINENO}
+
+out=$(seq 1000 あ 30000 | ./plus)
+[ "$?" = 1 ]                                    || ng ${LINENO}
+[ "${out}" = "error! 数値を入力して下さい:あ" ] || ng ${LINENO}
+
+### Empty Input Test ###
+out=$(seq | ./plus)
+[ "$?" = 1 ] 	   || ng ${LINENO}
+[ "${out}" = "0" ] || ${LINENO}
 
 [ "$res" = 0 ] && echo OK
 exit $res
-
-### I/O ###
-out=$(seq 5 | ./plus)
-[ "${out}" = 15 ] || ng ${LINENO}
-
-out=$(echo あ | ./plus)
-[ "$?" = 1 ]	  || ng ${LINENO}
-[ "${out}" = "" ] || ng ${LINENO}
-
-out=$(echo | .plus)
-[ "$?" = 1 ]      || ng ${LINENO}
-[ "${out}" = "" ] || ng ${LINENO}
-
-[ "$res" = 0 ] && echo OK
-exit $res
-
