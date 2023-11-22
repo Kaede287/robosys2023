@@ -3,7 +3,7 @@
 # plusコマンドについて
 [![test](https://github.com/Kaede287/robosys2023/actions/workflows/test.yml/badge.svg)](https://github.com/Kaede287/robosys2023/actions/workflows/test.yml)
 
-標準出力から読み込んだ数字を足す。
+標準出力から読み込んだ数字を足す。足した数字を三桁区切りで出力する。
 
 ## 必要なソフトウェア
 * python
@@ -28,7 +28,7 @@ $ ./plus < nums
 * このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます.
 * このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
 	* [ryuichiueda/my_slides robosys_2022](https://github.com/ryuichiueda/my_slides/tree/master/robosys_2022)
-* © 2023 Kaede Ichika
+* © 2023 Kaede Ichikawa
 
 
 
