@@ -18,6 +18,8 @@ out=$(seq 1000 2000 3000 | ./plus)
 out=$(seq 10000 10000 10000 | ./plus)
 [ "${out}" = "30,000" ] || ng ${LINENO}
 
+out=$(seq 0.5 | ./plus)
+
 ### Error Input Test ###
 out=$(seq あ | ./plus)
 [ "$?" = 1 ] 					|| ng ${LINENO}
