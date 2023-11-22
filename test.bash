@@ -44,7 +44,7 @@ out=$(seq 1000 , 3000 | ./plus)
 [ "$?" = 1 ]           || ng ${LINENO}
 [ "${out}" = "error" ] || ng ${LINENO}
 
-### Empty Input Test ###
+### 空文字の判定 ###
 out=$(seq | ./plus)
 [ "$?" = 1 ] 	   || ng ${LINENO}
 [ "${out}" = "0" ] || ${LINENO}
