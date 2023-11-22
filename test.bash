@@ -10,7 +10,7 @@ res=0
 
 ### 数字のみのとき###
 out=$(seq 1000 2000 30000 | ./plus)
-[ "${out}" = "33,000" ] || ng ${LINENO}
+[ "${out}" = "33,000" ] || ng ${LINENO}i
 
 out=$(seq 1000 2000 3000 | ./plus)
 [ "${out}" = "5,000" ] || ng ${LINENO}
@@ -20,29 +20,29 @@ out=$(seq 10000 10000 10000 | ./plus)
 
 ### 文字を含むとき ###
 out=$(seq あ | ./plus)
-[ "$?" = 1 ] 					|| ng ${LINENO}
-[ "${out}" = "error! 数値を入力して下さい:あ" ] || ng ${LINENO}
+[ "$?" = 1 ] 	       || ng ${LINENO}
+[ "${out}" = "error" ] || ng ${LINENO}
 
 out=$(seq 1000 あ 30000 | ./plus)
-[ "$?" = 1 ]                                    || ng ${LINENO}
-[ "${out}" = "error! 数値を入力して下さい:あ" ] || ng ${LINENO}
+[ "$?" = 1 ]           || ng ${LINENO}
+[ "${out}" = "error" ] || ng ${LINENO}
 
 out=$(seq 1000 a 30000 | ./plus)
-[ "$?" = 1 ]                                    || ng ${LINENO}
-[ "${out}" = "error! 数値を入力して下さい:あ" ] || ng ${LINENO}
+[ "$?" = 1 ]            || ng ${LINENO}
+[ "${out}" = "error" ] || ng ${LINENO}
 
 $(seq 1000 A 30000 | ./plus)
-[ "$?" = 1 ]                                    || ng ${LINENO}
-[ "${out}" = "error! 数値を入力して下さい:あ" ] || ng ${LINENO}
+[ "$?" = 1 ]           || ng ${LINENO}
+[ "${out}" = "error" ] || ng ${LINENO}
 
 ### 記号を含むとき ###
 out=$(seq 1000 . 3000 | ./plus)
-[ "$?" = 1 ]                                    || ng ${LINENO}
-[ "${out}" = "error! 数値を入力して下さい:あ" ] || ng ${LINENO}
+[ "$?" = 1 ]           || ng ${LINENO}
+[ "${out}" = "error" ] || ng ${LINENO}
 
 out=$(seq 1000 , 3000 | ./plus)
-[ "$?" = 1 ]                                    || ng ${LINENO}
-[ "${out}" = "error! 数値を入力して下さい:あ" ] || ng ${LINENO}
+[ "$?" = 1 ]           || ng ${LINENO}
+[ "${out}" = "error" ] || ng ${LINENO}
 
 ### Empty Input Test ###
 out=$(seq | ./plus)
