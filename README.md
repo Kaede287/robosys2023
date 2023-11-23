@@ -19,7 +19,10 @@ $ ./plus < nums
 ```
 
 ## インストール方法
-* 自身の動くpython環境にインストールする.
+* 自身の動くpython環境にインストールする.下記のコマンドを入力する.
+```
+https://github.com/Kaede287/robosys2023.git
+```
 
 ## テスト環境 
 * Ubuntu20.04
