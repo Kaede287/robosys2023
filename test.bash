@@ -30,7 +30,6 @@ out=$(seq あ | ./plus)
 out=$(seq . | ./plus)
 [ "$?" = 0 ] || ng ${LINENO}
 
-
 ### 空文字の判定 ###
 out=$(seq | ./plus)
 [ "$?" = 0 ] || ng ${LINENO}
