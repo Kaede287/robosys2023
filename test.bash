@@ -20,7 +20,7 @@ out=$(seq 1000 | ./plus)
 [ "${out}" = "500,500" ] || ng ${LINENO}
 
 out=$(seq 10000 | ./plus)
-[ "${out}" = "5000,5000" ] || ng ${LINENO}
+[ "${out}" = "50,005,000" ] || ng ${LINENO}
 
 ### 文字を含むとき ###
 out=$(seq あ | ./plus)
