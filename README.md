@@ -21,7 +21,7 @@ $ ./plus < nums
 ## インストール方法
 * Githubやpythonが導入された環境で,下記のコマンドを入力する.
 ```
-https://github.com/Kaede287/robosys2023.git
+$ git clone  https://github.com/Kaede287/robosys2023.git
 ```
 
 ## テスト環境 
