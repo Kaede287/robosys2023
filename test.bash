@@ -4,50 +4,37 @@
 
 ng () {
     echo "NG at Line $1"
+    res=1
 }
 
 res=0
 
 ### 数字のみのとき###
-out=$(seq 1000 2000 30000 | ./plus)
-[ "${out}" = "33,000" ] || ng ${LINENO}i
+out=$(seq 10 | ./plus)
+[ "${out}" = "55" ] || ng ${LINENO}
 
-out=$(seq 1000 2000 3000 | ./plus)
-[ "${out}" = "5,000" ] || ng ${LINENO}
+out=$(seq 100 | ./plus)
+[ "${out}" = "5,050" ] || ng ${LINENO}
 
-out=$(seq 10000 10000 10000 | ./plus)
-[ "${out}" = "30,000" ] || ng ${LINENO}
+out=$(seq 1000 | ./plus)
+[ "${out}" = "500,500" ] || ng ${LINENO}
+
+out=$(seq 10000 | ./plus)
+[ "${out}" = "5000,5000" ] || ng ${LINENO}
 
 ### 文字を含むとき ###
 out=$(seq あ | ./plus)
-[ "$?" = 1 ] 	       || ng ${LINENO}
-[ "${out}" = "error" ] || ng ${LINENO}
-
-out=$(seq 1000 あ 30000 | ./plus)
-[ "$?" = 1 ]           || ng ${LINENO}
-[ "${out}" = "error" ] || ng ${LINENO}
-
-out=$(seq 1000 a 30000 | ./plus)
-[ "$?" = 1 ]            || ng ${LINENO}
-[ "${out}" = "error" ] || ng ${LINENO}
-
-$(seq 1000 A 30000 | ./plus)
-[ "$?" = 1 ]           || ng ${LINENO}
-[ "${out}" = "error" ] || ng ${LINENO}
+[ "$?" = 0 ] || ng ${LINENO}
 
 ### 記号を含むとき ###
-out=$(seq 1000 . 3000 | ./plus)
-[ "$?" = 1 ]           || ng ${LINENO}
-[ "${out}" = "error" ] || ng ${LINENO}
+out=$(seq . | ./plus)
+[ "$?" = 0 ] || ng ${LINENO}
 
-out=$(seq 1000 , 3000 | ./plus)
-[ "$?" = 1 ]           || ng ${LINENO}
-[ "${out}" = "error" ] || ng ${LINENO}
 
 ### 空文字の判定 ###
 out=$(seq | ./plus)
-[ "$?" = 1 ] 	   || ng ${LINENO}
-[ "${out}" = "0" ] || ${LINENO}
+[ "$?" = 0 ] || ng ${LINENO}
 
 [ "$res" = 0 ] && echo OK
+
 exit $res

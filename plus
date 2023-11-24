@@ -4,15 +4,15 @@
 
 import sys
 
-ans = 0
+ans =0
 
 for line in sys.stdin:
     try:
         ans += int(line)
-    except: #Errormessage 
-        print(f"error! 数値を入力して下さい:{line}")
-
+    except: 
+        ans += float(line) 
 
 # 3桁区切りで結果を出力
 ans = '{:,}'.format(ans)
+
 print(ans)
