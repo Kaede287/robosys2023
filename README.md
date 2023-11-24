@@ -3,7 +3,7 @@
 # plusコマンドについて
 [![test](https://github.com/Kaede287/robosys2023/actions/workflows/test.yml/badge.svg)](https://github.com/Kaede287/robosys2023/actions/workflows/test.yml)
 
-標準出力から読み込んだ数字を足す.足した数字を三桁区切りで出力する.
+1から任意の数nまでの数字をすべて足す.足した数字を三桁区切りで出力する.
 
 ## 必要なソフトウェア
 * python
@@ -11,8 +11,8 @@
 
 ## 使い方 
 ```
-$seq 10 | ./plus
-55
+$seq 100 | ./plus
+5,050
 
 $ ./plus < nums
 6,000
