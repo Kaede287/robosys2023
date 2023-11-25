@@ -24,6 +24,12 @@ $ ./plus < nums
 $ git clone  https://github.com/Kaede287/robosys2023.git
 ```
 
+* robosys2023ディレクトリを開く
+```
+cd robosys2023
+```
+
+
 ## テスト環境 
 * Ubuntu20.04
 
