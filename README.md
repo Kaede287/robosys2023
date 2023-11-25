@@ -29,6 +29,10 @@ $ git clone  https://github.com/Kaede287/robosys2023.git
 cd robosys2023
 ```
 
+* 実行方法
+```
+./plus
+```
 
 ## テスト環境 
 * Ubuntu20.04
