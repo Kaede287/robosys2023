@@ -7,11 +7,11 @@
 
 ## 必要なソフトウェア
 * python
-* テスト済み : 3.7~3.10
+	* テスト済み:3.7~3.10
 
 ## 使い方 
 ```
-$seq 100 | ./plus
+$ seq 100 | ./plus
 5,050
 
 $ ./plus < nums
@@ -24,14 +24,14 @@ $ ./plus < nums
 $ git clone  https://github.com/Kaede287/robosys2023.git
 ```
 
-* robosys2023ディレクトリを開く
+* robosys2023ディレクトリを開く.
 ```
-cd robosys2023
+$ cd robosys2023
 ```
 
-* 実行方法
+* 実行方法に関しては、上記の使い方を参照してください.実行権限が付与されていない場合は, 下記コマンドを入力してください.
 ```
-./plus
+$ chmod +x plus
 ```
 
 ## テスト環境 
